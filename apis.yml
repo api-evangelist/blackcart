@@ -1,7 +1,31 @@
 aid: blackcart
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/blackcart.png
 name: Blackcart
-description: Blackcart is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Blackcart is a Try Before You Buy (TBYB) platform for ecommerce merchants that
+  lets online shoppers order products, receive them at home, and pay only for
+  what they keep during a trial window. The platform pairs a proprietary fraud
+  and AI order-decisioning engine with storefront integrations for Shopify,
+  Magento, WooCommerce, BigCommerce, Salesforce Commerce Cloud, WordPress, and
+  custom storefronts, and charges merchants a revenue share on kept items rather
+  than upfront or integration fees. Founded circa 2019 and backed by a 2021
+  US$8.8M Series A (investors include 500 Global), Blackcart exposed a Beta REST
+  API (order cancellation, refunds, product/store endpoints) documented on
+  Stoplight. As of this enrichment pass its primary domains (blackcart.com and
+  its *.blackcart.com subdomains) return Fastly "unknown domain" errors and
+  blackcart.co serves only a JavaScript redirect shell, indicating the public
+  product and developer surface is offline or the company has wound down.
 url: https://raw.githubusercontent.com/api-evangelist/blackcart/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,11 +33,27 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-status: defunct-or-offline
+x-status-note: >-
+  Enrichment 2026-07-18 could not verify a live company surface. blackcart.com
+  and shop.blackcart.com return Fastly "unknown domain"; merchantsupport.blackcart.com
+  returns Cloudflare error 1034; blackcart.co returns only a JS "Redirecting..."
+  parking/cloaking shell. The only live artifact is a stale Beta API doc project
+  hosted at blackcart.stoplight.io (its table-of-contents API returns HTTP 500),
+  so no OpenAPI, SDK, or /.well-known surface could be honestly harvested. No
+  artifact pointers were fabricated against dead domains.
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
+- Try Before You Buy
+- eCommerce
+- Retail
+- Payments
+- Shopify
+- Fraud Prevention
+- Order Management
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,4 +62,15 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://blackcart.com
+  url: https://blackcart.co
+- type: APIReference
+  url: https://blackcart.stoplight.io/docs/blackcart-api
+- type: Documentation
+  url: https://blackcart.stoplight.io/docs/blackcart-api
+- type: Shopify
+  url: https://apps.shopify.com/blackcart
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
