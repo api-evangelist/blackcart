@@ -42,7 +42,7 @@ x-status-note: >-
   hosted at blackcart.stoplight.io (its table-of-contents API returns HTTP 500),
   so no OpenAPI, SDK, or /.well-known surface could be honestly harvested. No
   artifact pointers were fabricated against dead domains.
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-18'
 tags:
